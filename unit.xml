@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="2.0540" tests="2" failures="1">
+  <testsuite name="Root Suite" timestamp="2022-03-26T14:39:10" tests="0" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="XPhunk" timestamp="2022-03-26T14:39:10" tests="2" file="E:\Work\Phunk\backend\test\index.spec.js" time="2.0540" failures="1">
+    <testcase name="XPhunk should create XPhunk" time="2.0080" classname="should create XPhunk">
+      <failure message="Timeout of 2000ms exceeded. For async tests and hooks, ensure &quot;done()&quot; is called; if returning a Promise, ensure it resolves. (E:\Work\Phunk\backend\test\index.spec.js)" type="Error"><![CDATA[Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure "done()" is called; if returning a Promise, ensure it resolves. (E:\Work\Phunk\backend\test\index.spec.js)
+    at listOnTimeout (internal/timers.js:557:17)
+    at processTimers (internal/timers.js:500:7)]]></failure>
+    </testcase>
+    <testcase name="XPhunk should fetch all the xphunk" time="0.0460" classname="should fetch all the xphunk">
+    </testcase>
+  </testsuite>
+</testsuites>
