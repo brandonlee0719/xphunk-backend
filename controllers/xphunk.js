@@ -2,13 +2,8 @@ const XPhunk = require('../models/xphunk');
 const { request } = require('../utils/helper');
 
 const getAll = async function(req, res, next) {
-    // var author = req.query.author;
-
-    var query = new Object();
-    // if (author !== undefined) query.author = author;
-
     const objs = await XPhunk.findAll({
-        where: query,
+        where: req.query
     });
     return res.status(200).json(objs);
 }
