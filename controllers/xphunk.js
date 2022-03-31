@@ -8,6 +8,14 @@ const getAll = async function(req, res, next) {
     return res.status(200).json(objs);
 }
 
+const getCount = async function(req, res, next) {
+    const objs = await XPhunk.findAll({
+        where: req.query
+    });
+    console.log(objs.length);
+    return res.status(200).json(objs.length);
+}
+
 const create = async function(req, res, next) {
     for (let i = 10000; i < 20000; i++) {
         const url = `https://xphunks.mypinata.cloud/ipfs/QmSH2wPew8BfQcCRwAYs4J7yXZcwVmiUpWX3YrxTH4SLBL/${i}`;
@@ -60,5 +68,5 @@ const create = async function(req, res, next) {
 }
 
 module.exports = {
-    getAll, create
+    getAll, getCount, create
 }
