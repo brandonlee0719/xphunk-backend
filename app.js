@@ -10,7 +10,7 @@ const xphunkRouter = require('./routes/xphunk');
 
 const app = express();
 const server = http.createServer(app);
-const port = 8000;
+const port = 5000;
 
 const corsOpts = {
     origin: '*',
