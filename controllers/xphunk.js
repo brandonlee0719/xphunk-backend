@@ -1,14 +1,14 @@
 const XPhunk = require('../models/xphunk');
 const { request } = require('../utils/helper');
 
-const getAll = async function(req, res, next) {
+const getAll = async function (req, res, next) {
     const objs = await XPhunk.findAll({
         where: req.query
     });
     return res.status(200).json(objs);
 }
 
-const getCount = async function(req, res, next) {
+const getCount = async function (req, res, next) {
     const objs = await XPhunk.findAll({
         where: req.query
     });
@@ -16,7 +16,7 @@ const getCount = async function(req, res, next) {
     return res.status(200).json(objs.length);
 }
 
-const create = async function(req, res, next) {
+const create = async function (req, res, next) {
     for (let i = 10000; i < 20000; i++) {
         const url = `https://xphunks.mypinata.cloud/ipfs/QmSH2wPew8BfQcCRwAYs4J7yXZcwVmiUpWX3YrxTH4SLBL/${i}`;
         const result = await request(url)
@@ -67,6 +67,21 @@ const create = async function(req, res, next) {
     return res.status(201).json('success');
 }
 
+const update = async function (req, res, next) {
+    const { id, isSale } = req.body;
+    
+    const obj = await XPhunk.findOne({
+        where: { id }
+    });
+    obj.update({ isSale });
+    return res.status(201).json('success');
+}
+
+const updateAll = async function (req, res, next) {
+    
+    return res.status(201).json('success');
+}
+
 module.exports = {
-    getAll, getCount, create
+    getAll, getCount, create, update, updateAll
 }

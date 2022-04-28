@@ -25,7 +25,8 @@ const XPhunk = sequelize.define("xphunk", {
     traitNeckAccessory: DataTypes.STRING,
     traitNose: DataTypes.STRING,
     traitSkinTone: DataTypes.STRING,
-    traitType: DataTypes.STRING
+    traitType: DataTypes.STRING,
+    isSale: DataTypes.NUMBER
 }, {timestamps : false});
 
 module.exports = XPhunk;
